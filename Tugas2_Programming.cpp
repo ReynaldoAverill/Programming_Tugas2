@@ -48,10 +48,53 @@ int main()
     }
     //penjumlahan polinom
     if(kodeoperasi==1){
-    
+    float polinomhasil1 [99];
+        int d4;
+
+        if(d2>d1){d4=d2;}
+            else{d4=d1;}
+
+        for(i=0;i<=d4;i++){
+            polinomhasil1 [i]= polinom1[i]+ polinom2[i];}
+
+
+     cout<<"  "<<endl;
+
+     cout<<"Polinom 1 :";
+     tulispolinom(polinom1,d1);
+     cout<<endl;
+     cout<<"Polinom 2 :";
+     tulispolinom(polinom2,d2);
+     cout<<endl;
+     cout<<"Hasil Penjumlahan :";
+     tulispolinom(polinomhasil1,d4);
+     cout<<endl;
+     cout<<"  "<<endl;
     }
     //pengurangan polinom
     else if(kodeoperasi==2){
+      float polinomhasil2 [99];
+        int d5;
+
+        if(d2>d1){d5=d2;}
+            else{d5=d1;}
+
+        for(i=0;i<=d5;i++){
+            polinomhasil2 [i]= polinom1[i]- polinom2[i];}
+
+
+     cout<<"  "<<endl;
+
+     cout<<"Polinom 1 :";
+     tulispolinom(polinom1,d1);
+     cout<<endl;
+     cout<<"Polinom 2 :";
+     tulispolinom(polinom2,d2);
+     cout<<endl;
+     cout<<"Hasil Pengurangan :";
+     tulispolinom(polinomhasil2,d5);
+     cout<<endl;
+     cout<<"  "<<endl;
     
     }
     //perkalian polinom
