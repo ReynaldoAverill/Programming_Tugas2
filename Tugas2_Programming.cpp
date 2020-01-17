@@ -99,7 +99,33 @@ int main()
     }
     //perkalian polinom
     else if(kodeoperasi==3){
-    
+        float polinomkali[99][99];
+        int j;
+
+        for(i=0;i<=d1;i++){
+            for(j=0;j<=d2;j++){
+
+            polinomkali[i][j]= polinom1[i]* polinom2[j];}}
+
+        int d5= d1+d2;
+
+        float polinomhasil3[99];
+
+        for(i=0;i<=d5;i++){
+            polinomhasil3[i]=polinomkali[i][0]+polinomkali[i-1][1]+polinomkali[i-2][2];}
+
+        cout<<"  "<<endl;
+
+     cout<<"Polinom 1 :";
+     tulispolinom(polinom1,d1);
+     cout<<endl;
+     cout<<"Polinom 2 :";
+     tulispolinom(polinom2,d2);
+     cout<<endl;
+     cout<<"Hasil Perkalian :";
+     tulispolinom(polinomhasil3,d5);
+     cout<<endl;
+     cout<<"  "<<endl;
     }
   } //turunan polinom
   else if(kodeoperasi==4){
