@@ -2,6 +2,7 @@
 using namespace std;
 
 //Fungsi untuk menampilkan polinom ke layar
+//Reynaldo Averill Adji Putra - STEI - 16519097
 void tulispolinom(float polinom[], int derajat){
   for(int i=derajat;0<=i;i--){
     if(i==derajat){
@@ -47,12 +48,13 @@ int main()
       cin>>polinom2[d2-i];
     }
     //penjumlahan polinom
+    //Mochammad Nandika Pratama - FTTM - 16419180
     if(kodeoperasi==1){
-    float polinomhasil1 [99];
         int d4;
 
         if(d2>d1){d4=d2;}
             else{d4=d1;}
+        float polinomhasil1 [d4+1];
 
         for(i=0;i<=d4;i++){
             polinomhasil1 [i]= polinom1[i]+ polinom2[i];}
@@ -60,74 +62,69 @@ int main()
 
      cout<<"  "<<endl;
 
-     cout<<"Polinom 1 :";
+     cout<<"Polinom 1: ";
      tulispolinom(polinom1,d1);
      cout<<endl;
-     cout<<"Polinom 2 :";
+     cout<<"Polinom 2: ";
      tulispolinom(polinom2,d2);
      cout<<endl;
-     cout<<"Hasil Penjumlahan :";
+     cout<<"Hasil Penjumlahan: ";
      tulispolinom(polinomhasil1,d4);
      cout<<endl;
      cout<<"  "<<endl;
     }
     //pengurangan polinom
+    //Mochammad Nandika Pratama - FTTM - 16419180
     else if(kodeoperasi==2){
-      float polinomhasil2 [99];
         int d5;
 
         if(d2>d1){d5=d2;}
             else{d5=d1;}
-
+        float polinomhasil2 [d5+1];
         for(i=0;i<=d5;i++){
             polinomhasil2 [i]= polinom1[i]- polinom2[i];}
 
 
      cout<<"  "<<endl;
 
-     cout<<"Polinom 1 :";
+     cout<<"Polinom 1: ";
      tulispolinom(polinom1,d1);
      cout<<endl;
-     cout<<"Polinom 2 :";
+     cout<<"Polinom 2: ";
      tulispolinom(polinom2,d2);
      cout<<endl;
-     cout<<"Hasil Pengurangan :";
+     cout<<"Hasil Pengurangan: ";
      tulispolinom(polinomhasil2,d5);
      cout<<endl;
      cout<<"  "<<endl;
     
     }
     //perkalian polinom
+    //Muhammad Fariz Aulia - FTTM - 16419252
     else if(kodeoperasi==3){
-        float polinomkali[99][99];
+        float polinomkali[d1+d2+1]={0};
         int j;
 
         for(i=0;i<=d1;i++){
             for(j=0;j<=d2;j++){
 
-            polinomkali[i][j]= polinom1[i]* polinom2[j];}}
-
-        int d5= d1+d2;
-
-        float polinomhasil3[99];
-
-        for(i=0;i<=d5;i++){
-            polinomhasil3[i]=polinomkali[i][0]+polinomkali[i-1][1]+polinomkali[i-2][2];}
+            polinomkali[i+j]+=polinom1[i]*polinom2[j];}}
 
         cout<<"  "<<endl;
 
-     cout<<"Polinom 1 :";
+     cout<<"Polinom 1: ";
      tulispolinom(polinom1,d1);
      cout<<endl;
-     cout<<"Polinom 2 :";
+     cout<<"Polinom 2: ";
      tulispolinom(polinom2,d2);
      cout<<endl;
-     cout<<"Hasil Perkalian :";
-     tulispolinom(polinomhasil3,d5);
+     cout<<"Hasil Perkalian: ";
+     tulispolinom(polinomkali,(d1+d2));
      cout<<endl;
      cout<<"  "<<endl;
     }
   } //turunan polinom
+  //Reynaldo Averill Adji Putra - STEI - 16519097
   else if(kodeoperasi==4){
     // input polinom
     cout<<"Masukkan derajat dari polinom: \n";
